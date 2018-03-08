@@ -1,0 +1,5 @@
+FROM anapsix/alpine-java
+
+ADD target/Generator.jar /
+
+CMD ["java", "-jar", "Generator.jar"]

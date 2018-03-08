@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            const socket = new WebSocket("ws://192.168.99.100:8080");
+            socket.onmessage = (e) => {
+                const message = document.createElement('div');
+                message.appendChild(document.createTextNode(e.data));
+                document.getElementById('messages').appendChild(message);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Messages</h1>
+        <div id="messages"></div>
+    </body>
+</html>

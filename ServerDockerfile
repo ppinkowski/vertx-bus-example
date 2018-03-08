@@ -1,0 +1,5 @@
+FROM anapsix/alpine-java
+
+ADD target/Server.jar /
+
+CMD ["java", "-jar", "/Server.jar"]

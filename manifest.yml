@@ -1,0 +1,25 @@
+---
+applications:
+- name: vertx-web
+  path: ./target/Server.jar
+  memory: 768M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  services:
+    - hazelcast
+- name: vertx-generator
+  path: ./target/Generator.jar
+  memory: 768M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  health-check-type: process
+  services:
+    - hazelcast
+- name: vertx-reciever
+  path: ./target/Reciever.jar
+  memory: 768M
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  health-check-type: process
+  services:
+    - hazelcast
